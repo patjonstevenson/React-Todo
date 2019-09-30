@@ -7,13 +7,24 @@ import Todo from "./Todo";
 class TodoList extends React.Component {
     constructor() {
         super();
-
     }
 
     render() {
         return (
             <>
-                {this.props.todos.map(todo => <Todo key={todo.id} todo={todo} />)}
+                <div className="todo-list">
+                    {this.props.todos.map(todo => (
+                        <Todo
+                            key={todo.id}
+                            todo={todo}
+                            toggleItem={this.props.toggleItem}
+                        />
+                    ))}
+
+                </div>
+                <button className="clear-button" onClick={this.props.clearCompleted}>
+                    Clear Completed
+                </button>
             </>
         );
     }

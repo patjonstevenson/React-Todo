@@ -1,0 +1,14 @@
+.todo-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.todo {
+    padding: 5%;
+}
+
+.completed {
+    text-decoration: line-through;
+}

@@ -6,13 +6,16 @@ class Todo extends React.Component {
     constructor() {
         super();
     }
+
     render() {
         return (
-            <div key={this.props.todo.id} className={`todo${this.props.todo.completed ? " completed" : ""}`} >
-                <h3>{this.props.todo.name}</h3>
+            <div
+                className={`todo${this.props.todo.completed ? " completed" : ""}`}
+                onClick={() => this.props.toggleItem(this.props.todo.id)}
+            >
+                <p>{this.props.todo.name}</p>
             </div>
         );
-
     }
 }
 
