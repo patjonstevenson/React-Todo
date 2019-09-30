@@ -11,7 +11,9 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: []
+      todos: window.localStorage.getItem('saveState')
+        ? JSON.parse(window.localStorage.getItem('saveState'))
+        : []
     }
   }
 
@@ -48,7 +50,10 @@ class App extends React.Component {
     })
   };
 
-
+  save = () => {
+    const saveState = JSON.stringify(this.state.todos);
+    localStorage.setItem('saveState', saveState);
+  }
 
 
   render() {
@@ -57,6 +62,7 @@ class App extends React.Component {
         <h2>Todo App</h2>
         <TodoForm addItem={this.addItem} />
         <TodoList todos={this.state.todos} toggleItem={this.toggleItem} clearCompleted={this.clearCompleted} />
+        <button onClick={this.save}>Save</button>
       </div>
     );
   }

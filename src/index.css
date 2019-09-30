@@ -1,14 +1,22 @@
 .todo-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
     width: 40%;
 }
 
 .todo {
-    padding: 5%;
+    border: 1px solid black;
+    width: 100%;
+    padding: 2.5%;
+    margin: 2.5%;
+    text-align: center;
+    background: red;
+    color: white;
+    font-size: 1.5rem;
 }
 
 .completed {
-    text-decoration: line-through;
+    /*text-decoration: line-through;*/
+    background: green;
 }
