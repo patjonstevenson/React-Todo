@@ -3,10 +3,6 @@ import ReactDOM from "react-dom";
 import TodoList from "./TodoList";
 
 class Todo extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <div

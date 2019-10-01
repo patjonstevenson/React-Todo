@@ -11,8 +11,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: window.localStorage.getItem('saveState')
-        ? JSON.parse(window.localStorage.getItem('saveState'))
+      todos: localStorage.getItem('saveState')
+        ? JSON.parse(localStorage.getItem('saveState'))
         : []
     }
   }
